@@ -26,7 +26,7 @@ struct强调是一个数据结构，class强调是一个对象有固定的行为
 数据->struct, 对象->class
 ```
 
-###DAY3
+### DAY3
 
 ```typescript
 /*CMakeList语法*/
