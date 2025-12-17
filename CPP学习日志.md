@@ -25,3 +25,23 @@ delete后指针仍然存在，但已悬空，须手动置空
 struct强调是一个数据结构，class强调是一个对象有固定的行为方法
 数据->struct, 对象->class
 ```
+
+###DAY3
+
+```typescript
+/*CMakeList语法*/
+cmake_minimum_required(VERSION *.*)
+project(工程名)
+
+set(CMAKE_CXX_STAMDARD **)
+
+//指定头文件所在目录
+include_directories(文件夹名)
+…如需多个目录，同上
+
+//列出所有的源文件
+file(GLOB_RECURSE SOURCES "文件夹/*.cpp" "*.cpp" etc.)
+
+//生成可执行文件
+add_executable(可执行文件名 ${SOURCES})
+```
