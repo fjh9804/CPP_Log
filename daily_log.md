@@ -161,3 +161,17 @@ file(GLOB …)的作用是“找文件”
 target_include_directories的作用是“设路径”，告诉编译器去哪里找#include指令提及的文件
 
 ```
+
+### DAY9
+
+```typescript
+1.bug修复日志
+
+VS2019 C2061错误：类定义时的先后位置和包含关系的冲突
+
+2.代码优化记录
+
+PORT_CONFIG调整为const struct类型，强制类型为常量，避免配置参数改动；
+
+全局变量的初始化考虑，去除接收发送序列的依赖性
+```
