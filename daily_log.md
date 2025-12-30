@@ -157,4 +157,7 @@ C++11的thread类会强制你在主动join和被动终止整个程序中做选�
 1.CMAKE
 solution中包含多个project时应使用target_include_directories来避免不必要的包含关系；
 
+file(GLOB …)的作用是“找文件”
+target_include_directories的作用是“设路径”，告诉编译器去哪里找#include指令提及的文件
+
 ```
