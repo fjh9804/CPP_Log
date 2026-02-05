@@ -50,3 +50,21 @@ c.std::weak_ptr(弱引用)
 /*bug*/
 对多字节类型变量取地址时，大端环境下取到的是高位字节地址，小端环境下取到的是低位字节地址。因此用不同类型指针取值时会产生环境差异。
 ```
+
+### Day4
+```typescript
+/*git使用*/
+git merge main 和 git rebase:
+--git merge main--
+优点：真实记录完整保留当时开发和合并的时间线，不会修改之前的提交历史。
+缺点：提交历史杂乱，有大量的merge branch main into...
+
+--git rebase--
+优点：历史干净，没有多余的merge commit。
+缺点：篡改历史，实际上删除了旧的提交，创建了内容相同但Commit ID完全不同的提交；冲突处理需要一个一个commit地去处理。
+
+--场景与选择--
+本地私有分支：git rebase，保持与主线同步并且保持提交历史整洁
+多人共同开发分支：必须git merge，金律：不要在公共分支上rebase!
+最后准备合入main：git merge，保持完整的开发链路和合并证据
+```
