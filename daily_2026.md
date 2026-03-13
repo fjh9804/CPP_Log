@@ -69,7 +69,7 @@ git merge main 和 git rebase:
 最后准备合入main：git merge，保持完整的开发链路和合并证据
 ```
 
-### Block5
+### Week 1
 ```typescript
 --2.27--
 /*正则表达式*/
@@ -115,5 +115,19 @@ def 函数名(参数1，参数2，…)':'
 缩进4个字符 行为语句
 
 
+
+```
+
+### Week 2
+```typescript
+--3.13--
+/*Python笔记*/
+matplotlib库调用
+//准备画布
+.figure(figsize=(宽度， 高度))
+//子图布局
+.subplot(行数， 列数， 当前第几个)
+//绘制散点图
+.scatter(坐标， 坐标， 颜色， 透明度， label='')
 
 ```
