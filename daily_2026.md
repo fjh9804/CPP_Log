@@ -128,6 +128,16 @@ matplotlib库调用
 //子图布局
 .subplot(行数， 列数， 当前第几个)
 //绘制散点图
-.scatter(坐标， 坐标， 颜色， 透明度， label='')
+.scatter(坐标， 坐标， 颜色， 透明度， label='这组数据命名')
+//绘制图像
+.plot(坐标， 坐标， label=''， 线宽)
+//装饰与标注
+.title("图标大标题")
+.xlabel("横坐标标签")
+.ylabel("纵坐标标签")
+.legend() //显示图例－－label
+//布局优化与渲染
+.tight_layout() //自动调整子图之间的间距
+.show() //最终显示到窗口
 
 ```
