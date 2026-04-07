@@ -23,7 +23,7 @@ TARGET:
 
 ##### 02.23
 
-![image-20260223120740616](C:\Users\MecH4cker\AppData\Roaming\Typora\typora-user-images\image-20260223120740616.png)
+![image-20260223120740616](.\image-20260223120740616.png)
 
 ---
 
