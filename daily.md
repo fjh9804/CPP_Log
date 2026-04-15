@@ -116,3 +116,151 @@ Target of the day；
 	
 ```
 
+
+
+---
+
+
+
+##### 04.08
+
+**`日志`**
+
+```markdown
+	很糟心的一天，早上打车打不到，还差点迟到。上午ATC的事经过和多个人讨论最后说服了使用blk原表，减少了工作量。中午休息时间把workflow和learnflow大致勾勒出一版，开始研究向量数据库，先了解数据库的作用及概念。下午先是低层需求催进度，再是显卡卖家看物流信息异常担心掉包追回快递，经过多番沟通才让他撤回追回。到下班前建行的电话又让我办分期，迷迷糊糊答应了，回家一看分了十二期，赶忙打人工客服终止，最终还是交了一个月的利息。
+	一天下来事事不顺，晚上回家第一件事就是记录这一天的感受，回顾自己一天下来，在这些杂事上耗费的心情和精力太多，今天要做的计划还是要跟进。
+```
+
+
+
+---
+
+
+
+##### 04.09
+
+`日志`
+
+```markdown
+```
+
+
+
+---
+
+
+
+##### 04.10
+
+**`安排`**
+
+```markdown
+Target of the day；
+	1.lms server;
+	2.RAG Vector-Database demo;
+```
+
+
+
+---
+
+##### 04.13
+
+`cmd & code`
+
+```markdown
+mkdir chromadb_offline
+cd chromadb_offline
+
+pip download chromadb --python-version 3.12 --only-binary=:all: --platform win_amd64
+
+
+***调用示例***
+import chromadb
+from chromadb.utils import embedding_functions
+
+# 告诉 ChromaDB 你的本地模型放在哪里
+local_ef = embedding_functions.ONNXMiniLM_L6_V2(
+    download_all=False # 重点：禁止下载
+)
+# 如果上面自带的类不支持手动路径，最稳妥的是用 HuggingFaceEmbeddingFunction 或者直接指向本地路径
+
+# 连接数据库
+client = chromadb.PersistentClient(path="./rag_db")
+
+# 创建集合时，把本地的 embedding_function 传进去
+collection = client.get_or_create_collection(
+    name="fms_translation_memory",
+    embedding_function=local_ef
+)
+```
+
+`todo`
+
+```markdown
+Tonight to be done:
+	1.职业品行反思;√
+	2.本地模型服务的开发计划;×
+	3.直播课补1节;√
+	4.violina 60 min;√
+```
+
+`Log`
+
+```markdown
+	上午重新翻译另外的blk表，填入LLR初稿中。
+	中午休息了二十分钟，之后继续上午的工作。
+	下午提交完，给xiazheng弄了本地模型服务的运行环境，遇到一些环境问题，但没有心思解决。之后调用之前生成的RAG进行优化翻译。然后问Gemini下一步建议是继续深入RAG的优化还是进行Tool的开发，以及服务器的分布式部署以及运行环境的优化方案。目标是能够自己心里有一个工程级的服务器搭建的流程框架，以及积累针对实际应用的大模型优化调优的经验。下班前突然涌来过去职业高素养的感觉，每天早早上班打卡，有条不紊地处理任务事项，正义感饱满的状态。
+```
+
+
+
+
+
+---
+
+
+
+##### 04.14
+
+`Log`
+
+```markdown
+	上午在本地调试chromadb的库，之后开始解决编译问题。
+	中午没有休息，接着解决编译问题。
+	下午解决完编译问题，把剩下的LLR写完并提交。
+	晚上火锅下了一份牛肉一份面一份西兰花，之后练了一小时琴，然后研究下载youtube视频到10点，本来是要洗澡睡觉的，被这个耽误了。
+	
+	今天一天的运转比较流畅，但晚上的时间利用略有瑕疵，练琴之后应该照着原来的安排洗澡睡觉。一天下来的心得：保证充足的睡眠是一天效率的保证，早起更是好的一天的开始的必要条件，保持一颗成长的心也非常关键，过去很长一段时间开始走下坡路有部分原因在于自己陷入固定型心态了，认为自己够好了，然后开始从各个角度怀疑和指责自己的不足，应该用学习进取的心态去主动面对生活和工作。
+```
+
+
+
+---
+
+
+
+##### 04.15
+
+`Today to do`
+
+```markdown
+Work task:
+	1.环形队列实现c/c++;
+Learning task:
+	1.本地模型服务的开发计划;√
+	2.直播课补1节;
+Excecising task:
+	1.violina 60 min;
+	2.muscle 20 min;
+```
+
+`Log`
+
+```markdown
+	早上6点20起床，洗漱吃好早饭7点15出门，坐上7点26的公交车，本来想早点坐车可以少堵几分钟车，结果不减反增。
+	上午解决了部分标准化变量名未修改到位，但后来才意识到流程问题，在这件事上思想斗争了很久。之后研究怎么搭建Agent，参考了经典Agent架构设计，以及Tool Use的引入，鉴于对整体的Agent设计不太清晰，本地服务器的开发计划没法进行长远计划，目前只能确定当下要进行Agent的架构设计选择Route Agent的架构进行确定性相对较高的任务，以符合嵌入式实时操作系统的项目特性，之后再进行翻译任务之外的拓展以及Tool Use的具体引进策略。
+	中午吃饭看了会儿电影《拼桌》。
+	下午去看了核心包的问题，排查确认是监测的网络层无法对底层交换机内的数据交互进行监测，和相关负责人确认后关闭问题项。之后继续研究Agent设计相关的背景知识，以及环形队列在嵌入式系统中的实现。
+```
+
